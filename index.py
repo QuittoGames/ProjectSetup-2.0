@@ -12,7 +12,8 @@ def Start():
     print("1. Start Project")
     print("2. Create A WebSite")
     print("3. Start Django Project")
-    print("4. Exit")
+    print("4. Config")
+    print("5. Exit")
     c = input("Digite Sua Opiçao: ")
     if c == "1":
         Start_Code()
@@ -24,6 +25,9 @@ def Start():
         Django_Project()
         return
     elif c == "4":
+        Config_Main()
+        return
+    elif c == "5":
         return
     else:
         print("Comando Nao Pdoe Ser Idetificado! ")
@@ -114,7 +118,48 @@ def Django_Project():
         sleep(2)
         Start()
         return
-    
+
+def Config_Main():
+    def Config_Diretorio():
+        tool.clear_screen()
+        New_Dir = input(r"Digite a Dir: ")
+        if str(New_Dir).lower().strip() == "":
+            print("Dir Nao Pode Ser Aceita!")
+            sleep(1)
+            Start()
+            return
+        config_local.DIRETORIO = New_Dir
+        Start()
+        return
+    try:
+        tool.clear_screen()
+        print("1. Configurações de Diretório")
+        #print("2. Configurações de Arquivos")
+        #print("3. Configurações de Mensagens")
+        print("4. Voltar")
+        c = input("Digite Sua Opiçao: ")
+        if c == "1":
+            Config_Diretorio()
+            return
+        #elif c == "2":
+        #    Config_Arquivos()
+        #    return
+        #elif c == "3":
+        #    Config_Mensagens()
+        #    return
+        elif c == "4":
+            Start()
+            return
+        else:
+            print("Comando Nao Pdoe Ser Idetificado! ")
+            sleep(1)
+            Config_Main()
+            return
+    except:
+        print("Erro Al Configurar! ")
+        sleep(2)
+        Start()
+        return
 
 if __name__ == "__main__":
     tool.verify_modules()
