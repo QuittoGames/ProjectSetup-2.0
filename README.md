@@ -1,9 +1,10 @@
 **ProjectSetup - Versão 2.0**
---**CODE NO BRANCH MASTER!!!**
+
+**CODE NO BRANCH MASTER!!!**
 
 O ProjectSetup é um script automatizado para criação de projetos, com foco em simplificar o processo de configuração de novos diretórios e arquivos. A versão anterior do ProjectSetup permitia a criação de pastas e arquivos com extensões e nomes configuráveis, mas a versão 2.0 traz melhorias significativas, incluindo novos tipos de projeto, como sites e projetos Django, além de uma interface de usuário mais interativa.
 
-Novidades da Versão 2.0:
+**Novidades da Versão 2.0**:
 Interface Interativa: Agora, o usuário pode escolher entre diferentes tipos de projetos (Código, Website ou Django) diretamente no menu inicial.
 Criação de Sites: A nova versão permite a criação rápida de sites com a estrutura básica de arquivos HTML.
 Integração com Django: Adicionamos uma funcionalidade para criar automaticamente um projeto Django, facilitando o início de projetos web baseados nesse framework.
@@ -15,7 +16,7 @@ Estrutura do Projeto:
 - `tool.py`: Funções utilitárias para limpar a tela, verificar dependências e instalar o Django.
 - `UI.py`: Interface de usuário para facilitar a interação com o script.
 
-Como Executar:
+**Como Executar**:
 Clone o repositório:
 git clone https://github.com/QuittoGames/ProjectSetup-2.0
 
