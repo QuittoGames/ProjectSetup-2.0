@@ -1,5 +1,5 @@
 **ProjectSetup - Versão 2.0**
-**CODE NO BRANCH MASTER!!!**
+--**CODE NO BRANCH MASTER!!!**
 
 O ProjectSetup é um script automatizado para criação de projetos, com foco em simplificar o processo de configuração de novos diretórios e arquivos. A versão anterior do ProjectSetup permitia a criação de pastas e arquivos com extensões e nomes configuráveis, mas a versão 2.0 traz melhorias significativas, incluindo novos tipos de projeto, como sites e projetos Django, além de uma interface de usuário mais interativa.
 
