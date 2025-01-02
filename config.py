@@ -32,11 +32,11 @@ class tool:
             os.system('clear')
     """
     DATA_CODE_BASE = """
-    from dataclasses import dataclass
+from dataclasses import dataclass
 
-    @dataclass
-    class data:
-        pass
+@dataclass
+class data:
+    pass
     """
 
     HTML_CODE_BASE = """<!DOCTYPE html>

@@ -32,5 +32,27 @@ class tool:
             os.system(f"pip3 install {i}")
             tool.clear_screen()
 
+    def Diretorio_Default(config_local):
+        tool.clear_screen()
+        New_Dir = input(r"Digite a Diretorio: ")
+        if str(New_Dir).lower().strip() == "":
+            print("Dir Nao Pode Ser Aceita!")
+            sleep(1)
+            return
+        config_local.DIRETORIO = New_Dir
+        print(f"Diretorio Atalizado Com Susseso!, Diretorio Atual: {config_local.DIRETORIO}")
+        return
+
+    def Diretorio_Web(config_local):
+        tool.clear_screen()
+        New_Dir = input(r"Digite a Diretorio: ")
+        if str(New_Dir).lower().strip() == "":
+            print("Diretorio Nao Pode Ser Aceita!")
+            sleep(1)
+            return
+        config_local.DIRETORIO = New_Dir
+        print(f"Diretorio Atalizado Com Susseso!, Diretorio Atual: {config_local.DIRETORIO_WEB}")
+        return
+    
     Verify_OS = lambda: platform.system()
 #Project created successfully!

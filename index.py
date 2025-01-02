@@ -122,15 +122,22 @@ def Django_Project():
 def Config_Main():
     def Config_Diretorio():
         tool.clear_screen()
-        New_Dir = input(r"Digite a Dir: ")
-        if str(New_Dir).lower().strip() == "":
-            print("Dir Nao Pode Ser Aceita!")
-            sleep(1)
+        print("Configurações de Diretório:")
+        print("1. Configurar Diretório Default")
+        print("2. Configurar Diretório Web")
+        print("3. Voltar")
+        c =input("Digite Sua Opiçao: ")
+        if c == "1":
+            tool.Diretorio_Default()
+            Config_Main()
+            return
+        elif c == "2":
+            tool.Diretorio_Web()
+            Config_Main()
+            return
+        elif c == "3":
             Start()
             return
-        config_local.DIRETORIO = New_Dir
-        Start()
-        return
     try:
         tool.clear_screen()
         print("1. Configurações de Diretório")
