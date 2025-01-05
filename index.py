@@ -120,40 +120,20 @@ def Django_Project():
         return
 
 def Config_Main():
-    def Config_Diretorio():
-        tool.clear_screen()
-        print("Configurações de Diretório:")
-        print("1. Configurar Diretório Default")
-        print("2. Configurar Diretório Web")
-        print("3. Voltar")
-        c =input("Digite Sua Opiçao: ")
-        if c == "1":
-            tool.Diretorio_Default()
-            Config_Main()
-            return
-        elif c == "2":
-            tool.Diretorio_Web()
-            Config_Main()
-            return
-        elif c == "3":
-            Start()
-            return
     try:
         tool.clear_screen()
         print("1. Configurações de Diretório")
-        #print("2. Configurações de Arquivos")
-        #print("3. Configurações de Mensagens")
+        print("2. Configurações de Arquivos")
         print("4. Voltar")
         c = input("Digite Sua Opiçao: ")
         if c == "1":
-            Config_Diretorio()
+            config.Config_Diretorio(config_local,tool=tool)
+            Config_Main()
             return
-        #elif c == "2":
-        #    Config_Arquivos()
-        #    return
-        #elif c == "3":
-        #    Config_Mensagens()
-        #    return
+        elif c == "2":
+            config.Config_Files(config_local=config_local,tool=tool)
+            Config_Main()
+            return
         elif c == "4":
             Start()
             return
@@ -162,8 +142,8 @@ def Config_Main():
             sleep(1)
             Config_Main()
             return
-    except:
-        print("Erro Al Configurar! ")
+    except Exception as E:
+        print(f"Erro Al Configurar! {E} ")
         sleep(2)
         Start()
         return

@@ -134,3 +134,39 @@ class data:
         ".site",
         ".dj",
     ]
+
+    def Config_Diretorio(config_local,tool):
+        tool.clear_screen()
+        print("Configurações de Diretório:")
+        print(f"Diretorio Padrao: {config_local.DIRETORIO}")
+        print(f"Diretorio Web: {config_local.DIRETORIO_WEB}")
+        print("1. Configurar Diretório Default")
+        print("2. Configurar Diretório Web")
+        print("3. Voltar")
+        c =input("Digite Sua Opiçao: ")
+        if c == "1":
+            tool.Diretorio_Default(config_local=config_local)
+            return
+        elif c == "2":
+            tool.Diretorio_Web(config_local=config_local)
+            return
+        elif c == "3":
+            return
+        
+        
+    def Config_Files(config_local,tool):
+        tool.clear_screen()
+        print("Configurações de Arquivos:")
+        print(f"Files: {config_local.FILES_PROGETS}")
+        print("1. Adicionar Arquivos")
+        print("2. Remover Arquivos")
+        print("3. Voltar")
+        c =input("Digite Sua Opiçao: ")
+        if c == "1":
+            tool.Add_File(config_local=config_local)
+            return
+        elif c == "2":
+            tool.Remove_File(config_local=config_local)
+            return
+        elif c == "3":
+            return
