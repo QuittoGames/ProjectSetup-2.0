@@ -57,6 +57,29 @@ class data:
     </html>
     """
 
+    CODE_BASE_JAVA_MAIN = """import data.data;
+    import  tool.tool;
+
+    public class Main {
+        tool tool_class = new tool();
+
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }"""
+
+    CODE_BASE_JAVA_TOOL = """package tool;
+
+    public class tool {
+    }
+    """
+
+    CODE_BASE_JAVA_DATA = """package data;
+
+    public class data {
+    }
+    """
+
     FILE_EXTENSIONS = [
         ".py",   # Python
         ".java", # Java
