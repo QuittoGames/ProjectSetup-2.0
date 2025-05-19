@@ -10,13 +10,15 @@ class config:
         "js": ".js"
     }
 
-    DIRETORIO = r"C:\Users\Gustavo Quitto\Downloads\Projects"
+    DIRETORIO = r"D:\Projects\Python"
 
-    DIRETORIO_WEB = r"C:\Users\Gustavo Quitto\Downloads\Projects"
-
+    DIRETORIO_WEB = r"D:\Projects\Web"
+    
     MESAGE_SCRIPT = "#Project created successfully!"
 
     MODULES = ["PyQt6"]
+
+    DATA_DIR = r"data\data_diretory.txt"
 
     TOOLS_CODE_BASE = """
 import os
@@ -40,21 +42,21 @@ class data:
     """
 
     HTML_CODE_BASE = """<!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-        <link rel="stylesheet" href="style.css"> <!-- Referência ao CSS -->
-        <script src="js.js"></script> <!-- Referência ao JavaScript -->
-    </head>
-    <body>
-        <footer>
-            <p>&copy; 2024 - Desenvolvido por Quitto</p>
-        </footer>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao CSS -->
+    <script src="js.js"></script> <!-- Referência ao JavaScript -->
+</head>
+<body>
+    <footer>
+        <p>&copy; 2025 - Desenvolvido por Quitto</p>
+    </footer>
 
-    </body>
-    </html>
+</body>
+</html>
     """
 
     CODE_BASE_JAVA_MAIN = """import data.data;
@@ -79,6 +81,26 @@ class data:
     public class data {
     }
     """
+
+    CODE_BASE_CSS_STYLE = """:root {
+    /* Tons de azul base modernos */
+    --color-primary: #1e40af;     /* Azul escuro */
+    --color-secondary: #3b82f6;   /* Azul médio (moderno) */
+    --color-accent: #60a5fa;      /* Azul claro para destaque */
+    
+    /* Tons neutros e de fundo */
+    --color-bg: #f9fafb;
+    --color-surface: #ffffff;
+    --color-text: #1f2937;        /* Quase preto */
+    --color-muted: #6b7280;       /* Cinza para texto secundário */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  """
 
     FILE_EXTENSIONS = [
         ".py",   # Python

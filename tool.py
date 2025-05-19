@@ -3,7 +3,7 @@ import platform
 from dataclasses import dataclass
 from time import sleep
 from config import config
-
+import subprocess
 
 @dataclass
 class tool:
@@ -16,7 +16,7 @@ class tool:
     def Install_Django():
         try:
             if platform.system() == "Windows": 
-                os.system("py -m pip install Django")
+                subprocess.run("py -m pip install Django")
                 return True
             else:
                 os.system("python -m pip install Django")

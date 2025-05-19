@@ -41,12 +41,19 @@ def Start_Code():
         Folder_Name = input("Digite o nome da pasta: ").strip()
         extetioin = input("Digite a extensão do seu projeto (por exemplo, .py): ").strip()
 
+
         if extetioin not in config.FILE_EXTENSIONS:
             print("Extensão não reconhecida!")
             Start()
             return
 
         path = os.path.join(config_local.DIRETORIO, Folder_Name)
+        
+        # Verifica se o caminho é válido
+        if not os.access(os.path.dirname(path), os.W_OK):
+            print("Permissões insuficientes ou caminho inválido.")
+            Start()
+            return
         
         # Cria o diretório se não existir
         os.makedirs(path, exist_ok=True)
@@ -86,6 +93,8 @@ def Web_Progect():
                 print(f"File: {file, extetioin}")
                 if file == "index":
                     arquivo.write(config.HTML_CODE_BASE)
+                elif file == "style":
+                    arquivo.write(config.CODE_BASE_CSS_STYLE)
 
         print(f"Todos os arquivos foram criados com sucesso no diretório '{path}'.")
         sleep(5)
@@ -102,13 +111,14 @@ def Django_Project():
             return
         tool.clear_screen()
         Folder_Name = input("Digite o nome da pasta: ").strip()
+        Folder_Name = Folder_Name.replace(" ","")
 
-        os.system(f"cd {config_local.DIRETORIO}")
+       # os.system(f"cd {config_local.DIRETORIO}")
         file_path = os.path.join(config_local.DIRETORIO)
         os.system(f"django-admin startproject {Folder_Name}")
 
         sleep(1)
-        tool.clear_screen()
+        #tool.clear_screen()
         print(f"Projeto Criado Com Susseso! Project Name: {Folder_Name}")
         sleep(5)
         Start()
@@ -119,14 +129,12 @@ def Django_Project():
         Start()
         return
 
-        #test push 
-
 def Config_Main():
     try:
         tool.clear_screen()
         print("1. Configurações de Diretório")
         print("2. Configurações de Arquivos")
-        print("4. Voltar")
+        print("3. Voltar")
         c = input("Digite Sua Opiçao: ")
         if c == "1":
             config.Config_Diretorio(config_local,tool=tool)
@@ -136,7 +144,7 @@ def Config_Main():
             config.Config_Files(config_local=config_local,tool=tool)
             Config_Main()
             return
-        elif c == "4":
+        elif c == "3":
             Start()
             return
         else:
@@ -153,4 +161,8 @@ def Config_Main():
 
 if __name__ == "__main__":
     tool.verify_modules()
+    """if not config.DIRETORIO.strip() and not config.DIRETORIO_WEB.strip():
+        tool.Add_Diretory()
+    else:
+        tool.set_dir(config_local=config_local)"""
     Start()
